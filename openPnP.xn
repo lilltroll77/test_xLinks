@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Network xmlns="http://www.xmos.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmos.com http://www.xmos.com">
   <Type>Board</Type>
-  <Name>xCORE-200 Explorer Kit</Name>
+  <Name>openPnP</Name>
   <Declarations>
     <Declaration>tileref tile[12]</Declaration>
     <Declaration>tileref usb_tile</Declaration>

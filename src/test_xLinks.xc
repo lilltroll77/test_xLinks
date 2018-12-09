@@ -14,8 +14,6 @@
 #define OFFSET 0
 #define PACKAGE 4
 
-const char tileID[]="Tile rounting ID:";
-
 interface com_if{
     void toMotherShip(int tileID , int coreID);
     [[guarded]] [[notification]] slave void notify();
@@ -39,7 +37,7 @@ void mothership(server interface com_if data[CLEN]){
     while(1){
         for (int i = 0 ;i < CLEN; i++){
             select{
-            case tmr when timerafter(t + 9999):> t:
+            case tmr when timerafter(t + 29999):> t:
                     int tile = t%CLEN;
                     printf("Notify tile%d\n" , tile);
                     data[tile].notify();
@@ -57,24 +55,16 @@ void mothership(server interface com_if data[CLEN]){
     }
 }
 
-void daisy_c(chanend c){
-    int tileID , coreID;
-    slave{
-        c:> tileID;
-        c:> coreID;
-    }
-       printf("Tile ID:%d Core:%d recieving message from tile:%d Core:%d via a daisychained link to the mothership switch\n" ,tileID ,get_local_tile_id()-OFFSET , get_logical_core_id(), tileID-OFFSET , coreID);
-}
-
 
 void reciever_c(chanend c){
     int tileID , coreID;
-    slave{
-        c:> tileID;
-        c:> coreID;
+    while(1){
+        slave{
+            c:> tileID;
+            c:> coreID;
+        }
+        printf("Tile ID:%d Core:%d recieving message from tile ID:%d Core:%d via the mothership switch\n" , get_local_tile_id()-OFFSET , get_logical_core_id(), tileID-OFFSET , coreID);
     }
-    printf("Tile ID:%d Core:%d recieving message from tile ID:%d Core:%d via mothership switch\n" , get_local_tile_id()-OFFSET , get_logical_core_id(), tileID-OFFSET , coreID);
-
 
 
 }
@@ -101,15 +91,16 @@ void sender_c(chanend c , unsigned delay){
     timer tmr;
     unsigned t;
     tmr:> t;
-    tmr when timerafter(t + delay):> void;
-    master{
-        c <: get_local_tile_id();
-        c <: get_logical_core_id();
+    while(1){
+        tmr when timerafter(t + delay):> t;
+        master{
+            c <: get_local_tile_id();
+            c <: get_logical_core_id();
+        }
     }
 }
 
 int main(){
-
 
     interface com_if data[CLEN];
     chan c[CLEN];
@@ -119,8 +110,8 @@ int main(){
         on tile[0]: mothership(data);
 
         par(int i=0; i<CLEN ; i++){
-            on tile[i]: sender_if(data[i] ,1000*i);
-            on tile[i]: sender_c(c[i], 3000*i);
+            on tile[i]: sender_if(data[i] ,2000*(i+1));
+            on tile[i]: sender_c(c[i], 6000*(i+1));
             on tile[CLEN-1-i]: reciever_c(c[i]);
         }
 
