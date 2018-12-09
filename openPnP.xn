@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://www.xmos.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmos.com http://www.xmos.com">
+  <Type>Board</Type>
+  <Name>xCORE-200 Explorer Kit</Name>
+  <Declarations>
+    <Declaration>tileref tile[12]</Declaration>
+    <Declaration>tileref usb_tile</Declaration>
+  </Declarations>
+  <Packages>
+    <Package id="Mothership" Type="XS2-UEnA-512-FB236">
+      <Nodes>
+        <Node Id="Mothership" InPackageId="0" Type="XS2-L16A-512" OscillatorSrc="1" SystemFrequency="500MHz">
+          <Boot>
+            <Source Location="bootFlash"/>
+          </Boot>
+          <Tile Number="0" Reference="tile[0]">
+            <Port Location="XS1_PORT_1B" Name="PORT_SQI_CS"/>
+            <Port Location="XS1_PORT_1C" Name="PORT_SQI_SCLK"/>
+            <Port Location="XS1_PORT_4B" Name="PORT_SQI_SIO"/>
+          </Tile>
+          <Tile Number="1" Reference="tile[1]"/>
+        </Node>
+        <Node Id="1" InPackageId="1" Type="periph:XS1-SU" Reference="usb_tile" Oscillator="24MHz">
+        </Node>
+      </Nodes>
+      <Links>
+        <Link Encoding="5wire">
+          <LinkEndpoint NodeId="Mothership" Link="8" Delays="52clk,52clk"/>
+          <LinkEndpoint NodeId="1" Link="XL0" Delays="1clk,1clk"/>
+        </Link>
+      </Links>
+    </Package>
+	
+	
+  <Package id="Xaxis" Type="XS2-LnA-512-TQ128">
+	<Nodes>
+		<Node Id="Xaxis" InPackageId="0" Type="XS2-L16A-512" SystemFrequency="500MHz">
+		  <Boot>
+            <Source Location="XMOSLINK"/>
+          </Boot>
+			<Tile Number="0" Reference="tile[2]" />
+			<Tile Number="1" Reference="tile[3]" />
+		</Node>
+	</Nodes>
+  </Package>
+  
+    <Package id="Xaxis2" Type="XS2-LnA-512-TQ128">
+	<Nodes>
+		<Node Id="Xaxis2" InPackageId="0" Type="XS2-L16A-512" SystemFrequency="500MHz">
+		  <Boot>
+            <Source Location="XMOSLINK"/>
+          </Boot>
+			<Tile Number="0" Reference="tile[4]" />
+			<Tile Number="1" Reference="tile[5]" />
+		</Node>
+	</Nodes>
+  </Package>
+  
+    <Package id="Yaxis" Type="XS2-LnA-512-TQ128">
+	<Nodes>
+		<Node Id="Yaxis" InPackageId="0" Type="XS2-L16A-512" SystemFrequency="500MHz">
+		  <Boot>
+            <Source Location="XMOSLINK"/>
+          </Boot>
+			<Tile Number="0" Reference="tile[6]" />
+			<Tile Number="1" Reference="tile[7]" />
+		</Node>
+	</Nodes>
+  </Package>
+  
+   <Package id="Head" Type="XS2-LnA-512-TQ128">
+	<Nodes>
+		<Node Id="Head" InPackageId="0" Type="XS2-L16A-512" SystemFrequency="500MHz">
+		  <Boot>
+            <Source Location="XMOSLINK"/>
+          </Boot>
+			<Tile Number="0" Reference="tile[8]" />
+			<Tile Number="1" Reference="tile[9]" />
+		</Node>
+	</Nodes>
+  </Package>
+  
+  
+
+    <Package id="IOextender1" Type="XS2-UnA-128-QF48">
+      <Nodes>
+        <Node Id="IOextender1" InPackageId="0" Type="XS2-L8A-128" SystemFrequency="500MHz">
+          <Tile Number="0" Reference="tile[10]"/>
+        </Node>
+      </Nodes>
+    </Package>
+    <Package id="IOextender2" Type="XS2-UnA-128-QF48">
+      <Nodes>
+        <Node Id="IOextender2" InPackageId="0" Type="XS2-L8A-128" SystemFrequency="500MHz">
+          <Tile Number="0" Reference="tile[11]"/>
+        </Node>
+      </Nodes>
+    </Package>
+
+  
+  
+  </Packages>
+
+ 
+ <Nodes>
+    <Node Id="2" Type="device:" RoutingId="0x8000">
+      <Service Id="1" Proto="xscope_host_data(chanend c);">
+        <Chanend Identifier="c" end="3"/>
+      </Service>
+    </Node>
+  </Nodes>
+
+   <Links>
+    <Link Encoding="2wire" Delays="2clk">
+      <LinkEndpoint NodeId="Mothership" Link="XL4"/>
+      <LinkEndpoint NodeId="Xaxis" Link="XL4"/>      
+    </Link>
+    
+    <Link Encoding="2wire" Delays="2clk">
+      <LinkEndpoint NodeId="Xaxis"  Link="XL7"/>
+      <LinkEndpoint NodeId="Xaxis2" Link="XL4"/>      
+    </Link>
+   
+      <Link Encoding="2wire" Delays="2clk">
+      <LinkEndpoint NodeId="Mothership" Link="XL3"/>
+      <LinkEndpoint NodeId="Yaxis" Link="XL4"/>    
+      </Link> 
+      
+      <Link Encoding="2wire" Delays="2clk">
+      <LinkEndpoint NodeId="Mothership" Link="XL7"/>
+      <LinkEndpoint NodeId="Head" Link="XL4"/>    
+      </Link>
+      
+       <Link Encoding="2wire" Delays="2clk">
+      <LinkEndpoint NodeId="Xaxis2" Link="XL7"/>
+      <LinkEndpoint NodeId="IOextender1" Link="XL0"/>    
+      </Link>
+   
+      <Link Encoding="2wire" Delays="2clk">
+      <LinkEndpoint NodeId="Yaxis" Link="XL7"/>
+      <LinkEndpoint NodeId="IOextender2" Link="XL0"/>    
+      </Link>
+   
+    
+    <Link Encoding="2wire" Delays="5clk" Flags="XSCOPE">
+      <LinkEndpoint NodeId="Mothership" Link="XL0"/>
+      <LinkEndpoint NodeId="2" Chanend="1"/>
+    </Link>
+</Links>
+
+  <ExternalDevices>
+    <Device NodeId="Mothership" Tile="0" Class="SQIFlash" Name="bootFlash" Type="S25FL116K">
+      <Attribute Name="PORT_SQI_CS" Value="PORT_SQI_CS"/>
+      <Attribute Name="PORT_SQI_SCLK"   Value="PORT_SQI_SCLK"/>
+      <Attribute Name="PORT_SQI_SIO"  Value="PORT_SQI_SIO"/>
+    </Device>
+  </ExternalDevices>
+  <JTAGChain>
+    <JTAGDevice NodeId="Mothership"/>
+    <JTAGDevice NodeId="Xaxis"/>
+    <JTAGDevice NodeId="Xaxis2"/>
+    <JTAGDevice NodeId="Yaxis"/>
+    <JTAGDevice NodeId="Head"/>
+    <JTAGDevice NodeId="IOextender1"/>
+    <JTAGDevice NodeId="IOextender2"/>  </JTAGChain>
+</Network>

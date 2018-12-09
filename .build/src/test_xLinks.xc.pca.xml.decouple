@@ -1,0 +1,590 @@
+<preCompilationAnalysis file="../src/test_xLinks.xc">
+<fDef name="daisy_c" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="main" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="mothership" global="true" noreturn="true" doNotSpecialize="false" numParams="1"/>
+<fDef name="reciever_c" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="rx" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="sender_c" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="sender_if" global="true" noreturn="true" doNotSpecialize="false" numParams="2"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="notify" global="true" interface="com_if" numArgs="0">
+</fCall>
+<fCall name="printf" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="6">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="get_local_tile_id" global="true" numArgs="0">
+</fCall>
+<fCall name="__builtin_getid" global="true" numArgs="0">
+</fCall>
+<fCall name="printf" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="get_local_tile_id" global="true" numArgs="0">
+</fCall>
+<fCall name="__builtin_getid" global="true" numArgs="0">
+</fCall>
+<fCall name="get_local_tile_id" global="true" numArgs="0">
+</fCall>
+<fCall name="__builtin_getid" global="true" numArgs="0">
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="toMotherShip" global="true" interface="com_if" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="fromMotherShip" global="true" interface="com_if" numArgs="0">
+</fCall>
+<fCall name="printf" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="get_local_tile_id" global="true" numArgs="0">
+</fCall>
+<fCall name="__builtin_getid" global="true" numArgs="0">
+</fCall>
+<fCall name="mothership" global="true" numArgs="1" impId="3">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="0" type="chan" isYielding="false"/><interfaceInfo index="1" type="chan" isYielding="false"/><interfaceInfo index="2" type="chan" isYielding="false"/><interfaceInfo index="3" type="chan" isYielding="false"/><interfaceInfo index="4" type="chan" isYielding="false"/><interfaceInfo index="5" type="chan" isYielding="false"/><interfaceInfo index="6" type="chan" isYielding="false"/><interfaceInfo index="7" type="chan" isYielding="false"/><interfaceInfo index="8" type="chan" isYielding="false"/><interfaceInfo index="9" type="chan" isYielding="false"/><interfaceInfo index="10" type="chan" isYielding="false"/><interfaceInfo index="11" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="0" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="1" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="2" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="3" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="9000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="4" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="12000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="5" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="5000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="15000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="6" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="18000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="7" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="21000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="8" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="9" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="9000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="27000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="10" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="10000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="30000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_if" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <values>
+      <value type="interface"><interfaceInfo index="11" type="chan" isYielding="false"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="11000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="sender_c" global="true" numArgs="2" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="33000"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="reciever_c" global="true" numArgs="1" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>
